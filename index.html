@@ -9,13 +9,20 @@
     No audit-trail metadata in the rendered chrome (per CoS Section 19).
     This comment is the audit trail. Versioning per CoS Operating Rule #6.
 
-    Version: v1.2.3 (2026-05-31)
+    Version: v1.2.4 (2026-05-31)
     Brand: matches qaizr-brand-guide.html (Space Grotesk + Inter + JetBrains
     Mono; space-noir / signal-cyan; warm only as gradient-jet, no standalone
     gold) and the visual language of qaizr-site-v2.html (square buttons,
     alternating dark sections, 1600px stretch).
 
     CHANGELOG
+    v1.2.4  2026-05-31  Added client-code auto-normalization. On submit, the
+                        Client or referral code field is uppercased and
+                        stripped to letters and digits, so "usa 250",
+                        "USA-250", and "usa250" all arrive as USA250. The
+                        single complimentary-access code for current clients
+                        is USA250, validated manually by Melissa and kept off
+                        the public page.
     v1.2.3  2026-05-31  Wired the live Formspree endpoint (form id xwvdngwp).
                         The pre-registration form is out of demo mode and now
                         POSTs to Formspree. Live submissions require the page
@@ -563,6 +570,8 @@
         form.reportValidity();
         return;
       }
+      var codeInput = form.querySelector('#code');
+      if (codeInput) { codeInput.value = codeInput.value.replace(/[^a-z0-9]/gi, '').toUpperCase(); }
       var liveMode = FORM_ENDPOINT.indexOf('formspree.io') !== -1;
       if (!liveMode) {
         msg.style.color = '#45D6FF';
