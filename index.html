@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--
+    QAIZR AI Agent Building Sprint - Pre-Registration Flyer
+    Canonical buyer-facing landing page for the Sprint.
+    Owner: Brian Audia (baudia@qzr.ai)
+
+    No audit-trail metadata in the rendered chrome (per CoS Section 19).
+    This comment is the audit trail. Versioning per CoS Operating Rule #6.
+
+    Version: v1.2.3 (2026-05-31)
+    Brand: matches qaizr-brand-guide.html (Space Grotesk + Inter + JetBrains
+    Mono; space-noir / signal-cyan; warm only as gradient-jet, no standalone
+    gold) and the visual language of qaizr-site-v2.html (square buttons,
+    alternating dark sections, 1600px stretch).
+
+    CHANGELOG
+    v1.2.3  2026-05-31  Wired the live Formspree endpoint (form id xwvdngwp).
+                        The pre-registration form is out of demo mode and now
+                        POSTs to Formspree. Live submissions require the page
+                        to be hosted (Formspree blocks local file:// pages)
+                        and the first submission to confirm the form and
+                        activate the maudia@qzr.ai notification address.
+    v1.2.2  2026-05-31  Split the email routing. Formspree notifications and
+                        the verification email stay with Melissa Audia
+                        (maudia@qzr.ai, billing and backend). The public
+                        contact on the flyer (footer, form note, error
+                        fallback) and the autoresponse reply-to are now Brian
+                        Audia (baudia@qzr.ai), who handles sales and marketing.
+    v1.2.1  2026-05-31  Routed all notification and contact email to Melissa
+                        Audia (maudia@qzr.ai), EVP Finance and Administration,
+                        since info@qzr.ai is not yet set up. Updated the
+                        footer contact, the form note, and the form error
+                        fallback. Companion setup notes updated to match.
+    v1.2.0  2026-05-31  Promoted the 3-3-3 Laja conversion pass (nine
+                        improvements, runs/01-laja, Laja-graded 6.2 to 8.5)
+                        into the canonical flyer. Two buyer edits on top:
+                        clarified the hero price chip to "Investment $1,000,
+                        $5,000 value" with the value struck through (no gold
+                        per the brand guide), and swapped the Andrew Ng quote
+                        for a verified Sundar Pichai quote in the "Why now"
+                        band.
+    v1.1.0  2026-05-31  Punchier lead and more substance. Added verified,
+                        attributed expert quotes (Peter H. Diamandis in the
+                        hero; Andrew Ng and Karim Lakhani in a "Why now" band).
+                        Reframed the promise around the executive AI primer,
+                        added the No SOP to Agent Swarm progression, added a
+                        recruiting / marketing / sales / operations use-case
+                        section, and corrected the time commitment to one hour
+                        of live training each morning plus 30 to 60 minutes of
+                        daily homework.
+    v1.0.0  2026-05-31  Initial canonical build. Supersedes the earlier quick
+                        draft (waitlist flyer) at this same path. Scrolling
+                        landing page: hero, the promise, who it is for, the
+                        five mornings, value stack ($5,000 value / $1,000 to
+                        enroll, lines approved by Brian), how pre-registration
+                        works, Formspree pre-registration form (name, email,
+                        mobile, job title, organization, optional code; demo
+                        mode until endpoint set), soft Bootcamp tease, final
+                        CTA, footer. Cohort: July 13 to 17, 2026, 9:00 AM CT,
+                        live on Zoom.
+
+    FORMSPREE: WIRED
+    The live endpoint (form id xwvdngwp) is set in FORM_ENDPOINT below, so the
+    form is out of demo mode and POSTs to Formspree. Notifications and the
+    verification email go to maudia@qzr.ai. Real submissions require the page
+    to be hosted; Formspree blocks local file:// pages, and the first
+    submission confirms the form and activates the notification address.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QAIZR AI Agent Building Sprint</title>
+  <meta name="description" content="A live five-day executive cohort. Build a working AI agent on your own real work, and the framework to build more. Week of July 13. Pre-register now.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect width='512' height='512' rx='64' fill='%23020B1E'/><circle cx='256' cy='256' r='86' fill='none' stroke='%2345D6FF' stroke-width='12' stroke-linecap='round' stroke-dasharray='502 38' stroke-dashoffset='-70'/><path d='M247.6 110C248.4 176 250.4 218 253.6 256C250.4 294 248.4 337 247.6 402L264.4 402C263.6 337 261.6 294 258.4 256C261.6 218 263.6 176 264.4 110Z' fill='%2345D6FF'/><circle cx='256' cy='256' r='18' fill='%23F4FBFF'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --space-1000:#010714;
+      --space-950:#0c162a;
+      --space-900:#12223e;
+      --space-800:#1c3456;
+      --signal-cyan:#37D1FF;
+      --signal-cyan-bright:#45D6FF;
+      --signal-blue:#1990FF;
+      --paper-frost:#F3FAFF;
+      --text-mid:#C2D4E8;
+      --line:rgba(156,182,212,0.24);
+      --line-bright:rgba(55,209,255,0.4);
+      --jet-orange-bright:#FF9A2F;
+      --jet-orange-deep:#FF5A3D;
+      --display:'Space Grotesk','Inter',sans-serif;
+      --body:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+      --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+      --maxw:1600px;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { font-size:112.5%; scroll-behavior:smooth; }
+    body {
+      font-family:var(--body); font-weight:400;
+      background:var(--space-1000); color:var(--paper-frost);
+      line-height:1.65; -webkit-font-smoothing:antialiased; overflow-x:hidden;
+    }
+    a { color:inherit; }
+    svg { display:block; max-width:100%; }
+
+    .wrap { max-width:var(--maxw); margin:0 auto; padding:0 7%; }
+    section { padding:7rem 0; }
+
+    .eyebrow {
+      font-family:var(--mono); font-size:0.74rem; font-weight:600;
+      text-transform:uppercase; letter-spacing:0.15em;
+      color:var(--signal-cyan-bright); margin-bottom:1.1rem;
+    }
+    h2.section-title {
+      font-family:var(--display); font-weight:600;
+      font-size:clamp(2.2rem,4vw,3.4rem); line-height:1.12;
+      letter-spacing:-0.03em; color:var(--paper-frost); text-wrap:balance;
+    }
+    .section-sub {
+      font-size:1.12rem; color:var(--text-mid); margin-top:1rem;
+      max-width:74ch; text-wrap:pretty;
+    }
+    .section-head { margin-bottom:3.4rem; }
+
+    /* buttons - square, matching the site */
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center; gap:0.5rem;
+      font-family:var(--display); font-weight:700; font-size:1rem; letter-spacing:-0.01em;
+      padding:1rem 1.9rem; border-radius:0; text-decoration:none; cursor:pointer;
+      border:1px solid transparent;
+      transition:transform 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+      white-space:nowrap;
+    }
+    .btn-primary { background:var(--signal-cyan-bright); color:#03101f; box-shadow:0 8px 32px rgba(69,214,255,0.42); }
+    .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(69,214,255,0.58); }
+    .btn-ghost { background:transparent; color:var(--text-mid); text-decoration:underline; text-underline-offset:5px; text-decoration-color:var(--line); }
+    .btn-ghost:hover { color:var(--paper-frost); text-decoration-color:var(--signal-cyan-bright); }
+
+    /* nav */
+    .nav { position:fixed; top:0; left:0; right:0; z-index:50; transition:background 0.25s ease, border-color 0.25s ease; border-bottom:1px solid transparent; }
+    .nav.scrolled { background:rgba(2,11,30,0.92); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); border-bottom-color:var(--line); }
+    .nav-inner { max-width:var(--maxw); margin:0 auto; padding:1rem 7%; display:flex; align-items:center; justify-content:space-between; gap:2rem; }
+    .logo-svg { height:46px; width:auto; }
+    .nav .btn { padding:0.7rem 1.3rem; font-size:0.92rem; }
+
+    /* hero */
+    .hero { padding:11rem 0 6rem; background:radial-gradient(ellipse 70% 60% at 50% 0%, rgba(55,209,255,0.13), transparent 70%), var(--space-1000); text-align:center; }
+    .hero-inner { max-width:var(--maxw); margin:0 auto; padding:0 7%; }
+    .hero-mark { width:104px; height:104px; margin:0 auto 1.6rem; filter:drop-shadow(0 0 18px rgba(69,214,255,0.4)); }
+    .hero-quote { max-width:62ch; margin:0 auto 1.7rem; font-family:var(--display); font-weight:600; font-style:italic; font-size:clamp(1.05rem,1.7vw,1.4rem); line-height:1.4; letter-spacing:-0.015em; color:var(--paper-frost); text-wrap:balance; }
+    .hero-quote cite { display:block; margin-top:0.8rem; font-style:normal; font-family:var(--mono); font-weight:600; font-size:0.78rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--signal-cyan-bright); line-height:1.55; }
+    .hero-quote cite span { display:block; color:var(--text-mid); font-weight:500; letter-spacing:0.05em; }
+    .quotes { background:radial-gradient(ellipse 70% 70% at 50% 30%, rgba(55,209,255,0.08), transparent 70%), var(--space-1000); }
+    .quotes2 { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; }
+    .qcard { background:var(--space-900); border:1px solid var(--line); padding:2rem 2rem 2.1rem; display:flex; flex-direction:column; justify-content:space-between; }
+    .qcard blockquote { font-family:var(--display); font-weight:600; font-style:italic; font-size:clamp(1.25rem,2.1vw,1.65rem); line-height:1.34; letter-spacing:-0.02em; color:var(--paper-frost); text-wrap:balance; }
+    .qcard blockquote .accent { color:var(--signal-cyan-bright); }
+    .qcard cite { margin-top:1.3rem; font-style:normal; font-family:var(--mono); font-weight:600; font-size:0.76rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--signal-cyan-bright); }
+    .qcard cite span { display:block; color:var(--text-mid); font-weight:500; margin-top:0.2rem; }
+    h1.hero-h1 {
+      font-family:var(--display); font-weight:600;
+      font-size:clamp(2.5rem,5.2vw,4rem); line-height:1.06; letter-spacing:-0.038em;
+      color:var(--paper-frost); margin:0 auto; max-width:20ch; text-wrap:balance;
+    }
+    h1.hero-h1 .accent { color:var(--signal-cyan-bright); }
+    .hero-sub {
+      font-family:var(--display); font-weight:600; font-style:italic;
+      font-size:clamp(1.3rem,2.4vw,1.9rem); line-height:1.3; letter-spacing:-0.02em;
+      color:var(--signal-cyan-bright); margin:1.3rem auto 0; max-width:48ch; text-wrap:balance;
+    }
+    .hero-lede { font-size:1.14rem; color:var(--text-mid); margin:1.7rem auto 0; max-width:76ch; text-wrap:pretty; }
+    .hero-lede strong { color:var(--paper-frost); font-weight:600; }
+    .hero-cta { display:flex; gap:1.4rem; justify-content:center; flex-wrap:wrap; margin-top:2.3rem; }
+    .cta-reassure { font-size:0.92rem; color:var(--text-mid); margin-top:1rem; text-wrap:pretty; }
+    .cta-reassure b { color:var(--paper-frost); font-weight:600; }
+
+    /* logistics chips */
+    .chips { display:flex; flex-wrap:wrap; gap:0.7rem; justify-content:center; margin-top:2.2rem; }
+    .chip {
+      font-family:var(--mono); font-size:0.8rem; letter-spacing:0.04em;
+      color:var(--paper-frost); background:var(--space-900);
+      border:1px solid var(--line); padding:0.55rem 1rem;
+    }
+    .chip b { color:var(--signal-cyan-bright); font-weight:600; }
+    .chip s { color:var(--text-mid); text-decoration-color:var(--text-mid); }
+
+    /* alt section */
+    .alt { background:var(--space-950); }
+
+    /* generic prose */
+    .prose p { font-size:1.1rem; color:var(--text-mid); max-width:70ch; margin-bottom:1.1rem; text-wrap:pretty; }
+    .prose p:last-child { margin-bottom:0; }
+    .prose strong { color:var(--paper-frost); font-weight:600; }
+
+    /* card grids */
+    .grid { display:grid; gap:1.5rem; }
+    .g2 { grid-template-columns:repeat(2,1fr); }
+    .g3 { grid-template-columns:repeat(3,1fr); }
+    .g4 { grid-template-columns:repeat(4,1fr); }
+    .g5 { grid-template-columns:repeat(5,1fr); }
+    .card {
+      background:var(--space-900); border:1px solid var(--line); border-radius:0;
+      padding:1.6rem; transition:border-color 0.18s ease, transform 0.18s ease;
+    }
+    .card:hover { border-color:var(--line-bright); transform:translateY(-3px); }
+    .card .idx { font-family:var(--mono); font-size:0.74rem; font-weight:600; letter-spacing:0.15em; color:var(--signal-cyan); text-transform:uppercase; }
+    .card h3 { font-family:var(--display); font-weight:600; font-size:1.2rem; line-height:1.25; letter-spacing:-0.015em; color:var(--paper-frost); margin:0.55rem 0 0.55rem; text-wrap:balance; }
+    .card p { font-size:1.02rem; color:var(--text-mid); text-wrap:pretty; }
+
+    /* value stack */
+    .value-wrap { display:grid; grid-template-columns:1.35fr 0.65fr; gap:2.5rem; align-items:start; }
+    .value-list { border-top:1px solid var(--line); }
+    .value-row { display:grid; grid-template-columns:1fr auto; gap:1.5rem; align-items:baseline; padding:1.15rem 0; border-bottom:1px solid var(--line); }
+    .value-row .vi { font-size:1.06rem; color:var(--paper-frost); text-wrap:pretty; }
+    .value-row .vv { font-family:var(--mono); font-size:1rem; color:var(--text-mid); white-space:nowrap; }
+    .value-row.total { border-bottom:2px solid var(--line-bright); }
+    .value-row.total .vi { font-family:var(--display); font-weight:600; font-size:1.2rem; }
+    .value-row.total .vv { color:var(--paper-frost); font-weight:600; }
+    .offer-card {
+      background:var(--space-900); border:1px solid var(--line-bright);
+      padding:2.2rem 2rem; position:sticky; top:6rem;
+    }
+    .offer-card .label { font-family:var(--mono); font-size:0.74rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--signal-cyan-bright); }
+    .offer-card .strike { font-family:var(--display); font-size:1.3rem; color:var(--text-mid); text-decoration:line-through; margin-top:1rem; }
+    .offer-card .price { font-family:var(--display); font-weight:700; font-size:clamp(3.2rem,6vw,4.4rem); line-height:1; letter-spacing:-0.04em; color:var(--signal-cyan-bright); margin-top:0.3rem; }
+    .offer-card .price-note { font-size:0.96rem; color:var(--text-mid); margin-top:0.6rem; }
+    .offer-card .btn { width:100%; margin-top:1.5rem; }
+
+    /* steps */
+    .step .idx { font-size:2rem; font-family:var(--display); font-weight:700; color:var(--signal-cyan-bright); letter-spacing:-0.03em; }
+
+    /* form */
+    .form-wrap { display:grid; grid-template-columns:0.9fr 1.1fr; gap:3rem; align-items:start; }
+    .form-card { background:var(--space-900); border:1px solid var(--line); padding:2rem; }
+    .field { margin-bottom:1.15rem; }
+    .field label { display:block; font-family:var(--mono); font-size:0.72rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--text-mid); margin-bottom:0.5rem; }
+    .field label .opt { color:var(--signal-cyan); text-transform:none; letter-spacing:0; }
+    .field input {
+      width:100%; font-family:var(--body); font-size:1rem; color:var(--paper-frost);
+      background:var(--space-1000); border:1px solid var(--line); border-radius:0;
+      padding:0.85rem 1rem; transition:border-color 0.16s ease;
+    }
+    .field input:focus { outline:none; border-color:var(--signal-cyan-bright); }
+    .field input::placeholder { color:#5f7798; }
+    .hp { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+    .form-msg { margin-top:1rem; font-size:0.96rem; color:var(--signal-cyan-bright); min-height:1.2rem; text-wrap:pretty; }
+    .form-note { font-size:0.9rem; color:var(--text-mid); margin-top:1rem; }
+    .form-side .prose p { max-width:46ch; }
+    .form-side .check { display:grid; grid-template-columns:auto 1fr; gap:0.7rem 0.9rem; margin-top:1.2rem; }
+    .form-side .check .dot { width:8px; height:8px; border-radius:50%; background:var(--signal-cyan-bright); margin-top:0.55rem; }
+    .form-side .check p { font-size:1.02rem; color:var(--text-mid); margin:0; }
+
+    /* tease */
+    .tease { border:1px solid var(--line); background:var(--space-900); padding:clamp(2rem,4vw,3rem); }
+    .tease h2 { font-family:var(--display); font-weight:600; font-size:clamp(1.7rem,3vw,2.4rem); letter-spacing:-0.025em; color:var(--paper-frost); text-wrap:balance; }
+    .tease p { font-size:1.1rem; color:var(--text-mid); margin-top:1rem; max-width:74ch; text-wrap:pretty; }
+
+    /* final cta */
+    .finalcta { text-align:center; background:radial-gradient(ellipse 60% 80% at 50% 100%, rgba(55,209,255,0.12), transparent 70%), var(--space-1000); }
+    .finalcta h2 { font-family:var(--display); font-weight:600; font-size:clamp(2.2rem,4.4vw,3.4rem); letter-spacing:-0.03em; color:var(--paper-frost); text-wrap:balance; max-width:20ch; margin:0 auto; }
+    .finalcta .hero-cta { margin-top:2rem; }
+
+    /* footer */
+    .footer { border-top:1px solid var(--line); padding:3rem 0; }
+    .footer-inner { max-width:var(--maxw); margin:0 auto; padding:0 7%; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.5rem; }
+    .footer .logo-svg { height:64px; }
+    .footer-meta { font-family:var(--mono); font-size:0.8rem; letter-spacing:0.05em; color:var(--text-mid); }
+    .footer-meta a { color:var(--signal-cyan-bright); text-decoration:none; }
+
+    @media (max-width:1000px) {
+      .value-wrap { grid-template-columns:1fr; }
+      .offer-card { position:static; }
+      .form-wrap { grid-template-columns:1fr; gap:2rem; }
+      .g4 { grid-template-columns:repeat(2,1fr); }
+      .g5 { grid-template-columns:repeat(2,1fr); }
+      .g3 { grid-template-columns:1fr; }
+    }
+    @media (max-width:640px) {
+      section { padding:4.5rem 0; }
+      .g2, .g4, .g5 { grid-template-columns:1fr; }
+      .quotes2 { grid-template-columns:1fr; }
+      .nav .btn { display:none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#top" aria-label="QAIZR home">
+        <svg class="logo-svg" viewBox="17 64 1361 376" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><radialGradient id="ncore" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 252) rotate(90) scale(112)"><stop offset="0" stop-color="#F4FBFF" stop-opacity="0.9"/><stop offset="0.56" stop-color="#45D6FF" stop-opacity="0.2"/><stop offset="1" stop-color="#45D6FF" stop-opacity="0"/></radialGradient><linearGradient id="nq" x1="120" y1="140" x2="790" y2="320" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F1F6FC"/><stop offset="1" stop-color="#DDE9F7"/></linearGradient><linearGradient id="nai" x1="1120" y1="158" x2="1420" y2="336" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#70E8FF"/><stop offset="1" stop-color="#1F90FF"/></linearGradient></defs><text x="812" y="325" text-anchor="end" fill="url(#nq)" font-size="214" font-family="Space Grotesk, Arial, sans-serif" font-weight="600" letter-spacing="6">QAIZR</text><circle cx="960" cy="252" r="66" fill="none" stroke="#2DBCE8" stroke-width="6" stroke-linecap="round" stroke-dasharray="392 23" stroke-dashoffset="-52" opacity="0.86"/><circle cx="960" cy="252" r="104" fill="url(#ncore)"/><path d="M955.8 84 C956.2 162 957.2 212 958.8 252 C957.2 292 956.2 342 955.8 420 L964.2 420 C963.8 342 962.8 292 961.2 252 C962.8 212 963.8 162 964.2 84 Z" fill="#2DBCE8" opacity="0.95"/><circle cx="960" cy="252" r="14" fill="#F4FBFF"/><text x="1108" y="325" text-anchor="start" fill="url(#nai)" font-size="214" font-family="Space Grotesk, Arial, sans-serif" font-weight="700" letter-spacing="6">AI</text></svg>
+      </a>
+      <a class="btn btn-primary" href="#register">Pre-register</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-inner">
+        <svg class="hero-mark" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="256" cy="256" r="150" fill="none" stroke="#2DBCE8" stroke-width="14" stroke-linecap="round" stroke-dasharray="884 52" stroke-dashoffset="-118" opacity="0.9"/><path d="M247.6 70 C248.4 168 250.4 214 253.6 256 C250.4 298 248.4 344 247.6 442 L264.4 442 C263.6 344 261.6 298 258.4 256 C261.6 214 263.6 168 264.4 70 Z" fill="#37D1FF"/><circle cx="256" cy="256" r="30" fill="#F4FBFF"/></svg>
+        <p class="eyebrow">AI Agent Building Sprint &middot; Live 5-day executive cohort</p>
+        <blockquote class="hero-quote">&ldquo;There will be two kinds of companies at the end of this decade: those that are fully utilizing AI, and those that are out of business.&rdquo;<cite>Peter H. Diamandis<span>New York Times bestselling author</span></cite></blockquote>
+        <h1 class="hero-h1">Be the first kind. In five days, build a working AI agent and the system to run your&nbsp;work.</h1>
+        <p class="hero-sub">For the executive whose calendar is full of work only they can do. You build it on your own real work, and you keep&nbsp;it.</p>
+        <p class="hero-lede">The AI Agent Building Sprint is the on-ramp for leaders who know they need AI and want the exact way to use it. You leave with a clear way to think about AI as an executive, a working agent running in your own Operate folder, and the framework to automate work across recruiting, marketing, sales, and&nbsp;operations.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#register">Pre-register for the Sprint</a>
+        </div>
+        <p class="cta-reassure">Pre-register now. We email your invoice, and your seat is locked the moment it is&nbsp;paid.</p>
+        <div class="chips">
+          <span class="chip"><b>July 13 to 17</b>, 2026</span>
+          <span class="chip"><b>9:00 AM</b> Central</span>
+          <span class="chip">Live on Zoom</span>
+          <span class="chip">1 hour a day, plus homework</span>
+          <span class="chip">Investment <b>$1,000</b> &middot; <s>$5,000 value</s></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE PROMISE ============ -->
+    <section class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">What you will learn</p>
+          <h2 class="section-title">Stop being the person every task runs&nbsp;through.</h2>
+          <p class="section-sub">The Sprint opens with the executive primer: why AI matters now, how to think about it, and exactly where to point it. Then you climb the curve, from work trapped in your head to agents that deliver it for you and automate the&nbsp;work.</p>
+        </div>
+        <div class="grid g5">
+          <div class="card"><span class="idx">Stage 1</span><h3>No SOP</h3><p>It is all in your head. The work depends on you being in the room.</p></div>
+          <div class="card"><span class="idx">Stage 2</span><h3>Written SOP</h3><p>The work is documented, so anyone can run it and get the same result.</p></div>
+          <div class="card"><span class="idx">Stage 3</span><h3>AI workflow</h3><p>AI runs each step on command. One person does the work of ten.</p></div>
+          <div class="card"><span class="idx">Stage 4</span><h3>AI agent</h3><p>The agent reads the standard, makes the call, and delivers finished work.</p></div>
+          <div class="card"><span class="idx">Stage 5</span><h3>Agent swarm</h3><p>Many agents run together and automate a whole function.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ THE FIVE MORNINGS ============ -->
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">The week</p>
+          <h2 class="section-title">Five mornings, one working&nbsp;system.</h2>
+          <p class="section-sub">One hour of live training each morning at 9:00 AM Central, Monday to Friday, built on your own work, plus 30 to 60 minutes of homework each day. Same rhythm daily, so you always know what is&nbsp;next.</p>
+        </div>
+        <div class="grid g5">
+          <div class="card"><span class="idx">Day 1</span><h3>Build your first agent</h3><p>Set up Operate and Cowork, then build a working agent on a task you run every week.</p></div>
+          <div class="card"><span class="idx">Day 2</span><h3>Map your role</h3><p>Break your week into the work worth handing off, and pick the highest-leverage agent to build next.</p></div>
+          <div class="card"><span class="idx">Day 3</span><h3>Run, improve, wrap up</h3><p>Put your agent to work, raise its quality, and learn the wrap-up that keeps it sharp.</p></div>
+          <div class="card"><span class="idx">Day 4</span><h3>Speedrun your fleet</h3><p>Use the Agent Builder Speedrun to stand up several agents at once instead of one at a time.</p></div>
+          <div class="card"><span class="idx">Day 5</span><h3>Build your operating system</h3><p>Stand up the folder spine and Chief of Staff file that turn your agents into one operating system.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ USE CASES ============ -->
+    <section class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Point it at the pain</p>
+          <h2 class="section-title">Build agents for the work that actually&nbsp;hurts.</h2>
+          <p class="section-sub">On Day 2 you map your role and name your real pain points. Then you build AI to solve them, in the function where it pays off&nbsp;fastest.</p>
+        </div>
+        <div class="grid g4">
+          <div class="card"><span class="idx">Recruiting</span><h3>Hire faster</h3><p>Screen applicants, draft outreach, and spotlight the candidates worth your time.</p></div>
+          <div class="card"><span class="idx">Marketing</span><h3>Publish more</h3><p>Turn one idea into campaigns, posts, and copy, on brand and on schedule.</p></div>
+          <div class="card"><span class="idx">Sales</span><h3>Close more</h3><p>Draft proposals, follow up on every lead, and keep the pipeline moving.</p></div>
+          <div class="card"><span class="idx">Operations</span><h3>Run it tighter</h3><p>Standardize reports, chase the open items, and run the recurring work.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERT VOICES ============ -->
+    <section class="quotes">
+      <div class="wrap">
+        <div class="section-head" style="text-align:center;">
+          <p class="eyebrow">Why now</p>
+          <h2 class="section-title">The people who study this&nbsp;agree.</h2>
+        </div>
+        <div class="quotes2">
+          <div class="qcard">
+            <blockquote>&ldquo;AI is more profound than <span class="accent">fire or electricity</span> or anything that we&rsquo;ve done in the past.&rdquo;</blockquote>
+            <cite>Sundar Pichai<span>CEO, Alphabet and Google</span></cite>
+          </div>
+          <div class="qcard">
+            <blockquote>&ldquo;AI won&rsquo;t replace humans, but <span class="accent">those who use AI will replace those who don&rsquo;t</span>.&rdquo;</blockquote>
+            <cite>Karim Lakhani<span>Professor, Harvard Business School</span></cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VALUE STACK ============ -->
+    <section id="value" class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">What you get</p>
+          <h2 class="section-title">$5,000 of value. $1,000 to&nbsp;enroll.</h2>
+          <p class="section-sub">Every line is real content from the week, not a padded list. You leave owning all of&nbsp;it.</p>
+        </div>
+        <div class="value-wrap">
+          <div class="value-list">
+            <div class="value-row"><span class="vi">Five mornings of live cohort instruction with Brian, one hour each, Monday to Friday</span><span class="vv">$2,500</span></div>
+            <div class="value-row"><span class="vi">A working, named AI agent built live with you, in your own Operate folder</span><span class="vv">$750</span></div>
+            <div class="value-row"><span class="vi">The Agent Builder and Agent Builder Speedrun, the meta-agents that build agents, yours to keep</span><span class="vv">$500</span></div>
+            <div class="value-row"><span class="vi">Starter Packs of ready-to-run agents, including the 3-3-3 Method and Project Wrap-Up</span><span class="vv">$400</span></div>
+            <div class="value-row"><span class="vi">The prompts and framework to build unlimited agents on your own</span><span class="vv">$400</span></div>
+            <div class="value-row"><span class="vi">Your Operate operating-system scaffolding, built live on Day 5</span><span class="vv">$250</span></div>
+            <div class="value-row"><span class="vi">Cohort access plus every session recording and transcript</span><span class="vv">$200</span></div>
+            <div class="value-row total"><span class="vi">Total value</span><span class="vv">$5,000</span></div>
+          </div>
+          <aside class="offer-card">
+            <div class="label">Your enrollment</div>
+            <div class="strike">$5,000 value</div>
+            <div class="price">$1,000</div>
+            <p class="price-note"><strong>By Friday:</strong> a working agent in your Operate folder, and the system to build more.</p>
+            <p class="price-note">One price for your seat in the week. No platform fees, no surprise line items.</p>
+            <p class="price-note">Led live by Brian Audia, founder of QAIZR.</p>
+            <a class="btn btn-primary" href="#register">Pre-register for the Sprint</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ HOW PRE-REGISTRATION WORKS ============ -->
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">How pre-registration works</p>
+          <h2 class="section-title">Three steps to your&nbsp;seat.</h2>
+        </div>
+        <div class="grid g3">
+          <div class="card step"><span class="idx">01</span><h3>Pre-register</h3><p>Add your details in the form below. It takes about a minute, and it holds your place in line.</p></div>
+          <div class="card step"><span class="idx">02</span><h3>Receive your invoice</h3><p>QAIZR emails you an invoice for your seat in the week of July 13.</p></div>
+          <div class="card step"><span class="idx">03</span><h3>Pay and you are in</h3><p>Payment confirms your seat. You receive your Basecamp project invitation and your setup instructions right away.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REGISTER FORM ============ -->
+    <section id="register" class="alt">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Pre-register</p>
+          <h2 class="section-title">Save your seat for the week of July&nbsp;13.</h2>
+        </div>
+        <div class="form-wrap">
+          <div class="form-side">
+            <div class="prose">
+              <p>Seats are limited and the cohort stays small on purpose, so every participant gets real attention during the live builds.</p>
+              <p>We use your details only to send your invoice and your Basecamp invitation. No spam, and your information is never sold.</p>
+            </div>
+            <div class="check">
+              <span class="dot"></span><p>Pre-register here, and QAIZR emails your invoice.</p>
+              <span class="dot"></span><p>Your seat is confirmed the moment the invoice is paid.</p>
+              <span class="dot"></span><p>You then receive your Basecamp invitation and setup instructions.</p>
+              <span class="dot"></span><p>Miss a morning? Every session is recorded and yours to keep.</p>
+            </div>
+          </div>
+
+          <form class="form-card" id="prereg" novalidate>
+            <div class="field">
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" autocomplete="name" required placeholder="Jane Rivera">
+            </div>
+            <div class="field">
+              <label for="email">Work email</label>
+              <input type="email" id="email" name="email" autocomplete="email" required placeholder="jane@company.com">
+            </div>
+            <div class="field">
+              <label for="mobile">Mobile number</label>
+              <input type="tel" id="mobile" name="mobile" autocomplete="tel" required placeholder="(555) 123-4567">
+            </div>
+            <div class="field">
+              <label for="job_title">Job title</label>
+              <input type="text" id="job_title" name="job_title" autocomplete="organization-title" required placeholder="VP of Operations">
+            </div>
+            <div class="field">
+              <label for="organization">Organization</label>
+              <input type="text" id="organization" name="organization" autocomplete="organization" required placeholder="Company name">
+            </div>
+            <div class="field">
+              <label for="code">Client or referral code <span class="opt">(optional)</span></label>
+              <input type="text" id="code" name="code" placeholder="If you have one">
+            </div>
+            <input type="text" class="hp" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="hidden" name="_subject" value="New Sprint pre-registration">
+            <button class="btn btn-primary" type="submit">Pre-register for the Sprint</button>
+            <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+            <p class="form-note">No payment now. You pre-register, QAIZR emails an invoice, and your seat is only confirmed once you choose to pay. Questions? Email baudia@qzr.ai.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BOOTCAMP TEASE ============ -->
+    <section>
+      <div class="wrap">
+        <div class="tease">
+          <p class="eyebrow">What comes next</p>
+          <h2>The Sprint is Week&nbsp;1.</h2>
+          <p>The AI Agent Building Sprint stands on its own, and most leaders start and finish right here. When you are ready to go further, the Executive AI Operating System Bootcamp picks up where the Sprint ends, taking you from a single agent to an orchestrated system that runs the work. Pre-register for the Sprint first. The next step will be there when you want&nbsp;it.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FINAL CTA ============ -->
+    <section class="finalcta">
+      <div class="wrap">
+        <p class="eyebrow" style="text-align:center;">Week of July 13</p>
+        <h2>Build the agent this&nbsp;week.</h2>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#register">Pre-register for the Sprint</a>
+        </div>
+        <p class="cta-reassure">$5,000 of value for $1,000. No payment now: pre-register, we email your invoice, and your seat is locked when you choose to pay. Seats fill from pre-registration&nbsp;first.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <a href="#top" aria-label="QAIZR home">
+        <svg class="logo-svg" viewBox="17 64 1361 376" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs><radialGradient id="fcore" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(960 252) rotate(90) scale(112)"><stop offset="0" stop-color="#F4FBFF" stop-opacity="0.9"/><stop offset="0.56" stop-color="#45D6FF" stop-opacity="0.2"/><stop offset="1" stop-color="#45D6FF" stop-opacity="0"/></radialGradient><linearGradient id="fq" x1="120" y1="140" x2="790" y2="320" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#F1F6FC"/><stop offset="1" stop-color="#DDE9F7"/></linearGradient><linearGradient id="fai" x1="1120" y1="158" x2="1420" y2="336" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#70E8FF"/><stop offset="1" stop-color="#1F90FF"/></linearGradient></defs><text x="812" y="325" text-anchor="end" fill="url(#fq)" font-size="214" font-family="Space Grotesk, Arial, sans-serif" font-weight="600" letter-spacing="6">QAIZR</text><circle cx="960" cy="252" r="66" fill="none" stroke="#2DBCE8" stroke-width="6" stroke-linecap="round" stroke-dasharray="392 23" stroke-dashoffset="-52" opacity="0.86"/><circle cx="960" cy="252" r="104" fill="url(#fcore)"/><path d="M955.8 84 C956.2 162 957.2 212 958.8 252 C957.2 292 956.2 342 955.8 420 L964.2 420 C963.8 342 962.8 292 961.2 252 C962.8 212 963.8 162 964.2 84 Z" fill="#2DBCE8" opacity="0.95"/><circle cx="960" cy="252" r="14" fill="#F4FBFF"/><text x="1108" y="325" text-anchor="start" fill="url(#fai)" font-size="214" font-family="Space Grotesk, Arial, sans-serif" font-weight="700" letter-spacing="6">AI</text></svg>
+      </a>
+      <p class="footer-meta">QAIZR &middot; <a href="https://qzr.ai">qzr.ai</a> &middot; <a href="mailto:baudia@qzr.ai">baudia@qzr.ai</a></p>
+    </div>
+  </footer>
+
+  <script>
+    /* ============================================================
+       FORMSPREE ENDPOINT - WIRED
+       The live endpoint is set below (form id xwvdngwp), so the form
+       POSTs to Formspree. Notifications and verification go to
+       maudia@qzr.ai. Real submissions require the page to be hosted;
+       Formspree blocks local file:// pages.
+       ============================================================ */
+    var FORM_ENDPOINT = "https://formspree.io/f/xwvdngwp";
+
+    /* sticky nav */
+    var nav = document.getElementById('nav');
+    function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 24); }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive:true });
+
+    /* form handler */
+    var form = document.getElementById('prereg');
+    var msg = document.getElementById('formMsg');
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (form._gotcha && form._gotcha.value) { return; }
+      if (!form.checkValidity()) {
+        msg.style.color = '#FF9A2F';
+        msg.textContent = 'Please complete the required fields above.';
+        form.reportValidity();
+        return;
+      }
+      var liveMode = FORM_ENDPOINT.indexOf('formspree.io') !== -1;
+      if (!liveMode) {
+        msg.style.color = '#45D6FF';
+        msg.textContent = 'Thank you. You are pre-registered. Watch your inbox for your invoice. (Preview mode: no data was sent.)';
+        form.reset();
+        return;
+      }
+      var data = new FormData(form);
+      msg.style.color = '#C2D4E8';
+      msg.textContent = 'Sending...';
+      fetch(FORM_ENDPOINT, { method:'POST', body:data, headers:{ 'Accept':'application/json' } })
+        .then(function (r) {
+          if (r.ok) {
+            msg.style.color = '#45D6FF';
+            msg.textContent = 'Thank you. You are pre-registered. Your invoice is on its way by email.';
+            form.reset();
+          } else {
+            msg.style.color = '#FF9A2F';
+            msg.textContent = 'Something went wrong. Please email baudia@qzr.ai and we will register you directly.';
+          }
+        })
+        .catch(function () {
+          msg.style.color = '#FF9A2F';
+          msg.textContent = 'Something went wrong. Please email baudia@qzr.ai and we will register you directly.';
+        });
+    });
+  </script>
+</body>
+</html>
